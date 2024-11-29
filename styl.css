@@ -11,4 +11,24 @@
   .main .list {
     color: red;
   }
-  
+
+  /* rule 1 */
+#subsection {
+  background-color: yellow;
+  color: blue;
+}
+
+/* rule 2 */
+.main1 #subsection {
+ color: red;
+}
+
+/* rule 1 */
+.class.second-class {
+  font-size: 12px;
+}
+
+/* rule 2 */
+.class .second-class {
+  font-size: 24px;
+}
