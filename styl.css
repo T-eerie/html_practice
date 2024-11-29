@@ -1,3 +1,13 @@
 .p {
     font-weight: 700;
 }
+
+/* rule 1 */
+.subsection {
+    color: blue;
+  }
+  
+  /* rule 2 */
+  .main .list {
+    color: red;
+  }
