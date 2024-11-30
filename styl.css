@@ -33,3 +33,9 @@
 .class .second-class {
   font-size: 24px;
 }
+
+table, th, td {
+  border: 1px solid black;
+  border-radius: 10px;
+  border-color: blue;
+}
