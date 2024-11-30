@@ -2,6 +2,11 @@
     font-weight: 700;
 }
 
+
+.p {
+  background-image: url('flower1.gif');
+}
+
 /* rule 1 */
 .subsection {
     color: blue;
