@@ -9,11 +9,3 @@ btn.addEventListener('click', () => {
     let average = (+num1.value + +num2.value + +num3.value + +num4.value)/4;
     display.innerText = `The average is: ${average}`;
 })
-
-let myNumber = 32;
-myNumber.toString(32);
-myNumber.toString(16);
-myNumber.toString(12);
-myNumber.toString(10);
-myNumber.toString(8);
-myNumber.toString(2);
