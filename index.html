@@ -138,7 +138,217 @@
   }
   </script>
 
+  <h2>JavaScript const</h2>
+
+  <p>Declaring a  <strong>constant array</strong> does NOT make the elements unchangeable:</p>
+
+  <p id="demo5"></p>
+
+  <script>
+  // Create an Array:
+  const cars = ["Saab", "Volvo", "BMW"];
+
+  // Change an element:
+  cars[1] = "Toyota";
+
+  // Add an element:
+  cars.push("Audi");
+
+  // remove an element:
+
+  // Display the Array:
+  document.getElementById("demo5").innerHTML = cars; 
+  </script>
+
+  <h2>JavaScript Objects</h2>
+
+  <p id="demo6"></p>
+
+  <script>
+  const person = {
+    firstName : "John",
+    middleName : "Mark",
+    lastName  : "Doe",
+    age     : 50,
+    eyeColor  : "blue"
+  };
+
+  document.getElementById("demo6").innerHTML =
+  person.lastName + " is " + person.age + " years old" + " and " + " has " + 
+  person.eyeColor + " eye.";
+  </script>
+
+  <h1>JavaScript Functions</h1>
+
+  <p>Invoke (call) a function that converts from Fahrenheit to Celsius then celsius to Fahrenheit:</p>
+  <p id="demo7"></p>
+  <p id="demo8"></p>
+
+  <script>
+  function toCelsius(f) {
+    return (5/9) * (f-32);
+  }
+
+  let value = toCelsius(77);
+  document.getElementById("demo7").innerHTML = value;
+
+  function tofahrenheit(c) {
+    return ((9 * c)/5) + 32;
+  }
+
+  let value1 = tofahrenheit(25);
+  document.getElementById("demo8").innerHTML = value1;
+  </script>
+
+  <h2>Object Methods</h2>
+  <p>A method is a function definition stored as a property value.</p>
+
+  <p id="demo9"></p>
+
+  <script>
+  const person1 = {
+    firstName: "John",
+    middleName: "James",
+    lastName: "Doe",
+    id: 5566,
+    fullName: function() {  return (this.firstName + " " + this.middleName 
+    + " " + this.lastName).toUpperCase();
+    }
+  };
+  document.getElementById("demo9").innerHTML = person1.fullName();
+  </script>
+
+  <h1>JavaScript Template Strings</h1>
+  <p>Templates allow variables in strings:</p>
+
+  <p id="demo10"></p>
+
+  <p>Templates are not supported in Internet Explorer.</p>
+
+  <script>
+  let price = 10;
+  let VAT = 0.25;
+  let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+  document.getElementById("demo10").innerHTML = total;
+  </script>
+
+  <h1>JavaScript Template Strings</h1>
+  <p>Templates allow variables in strings:</p>
+
+  <p id="demo"></p>
+
+  <p>Templates are not supported in Internet Explorer.</p>
+
+  <script>
+  let header = "Template Strings";
+  let tags = ["template strings", "javascript", "es6"];
+
+  let html = `<h2>${header}</h2><ul>`;
+
+  for (const x of tags) {
+    html += `<li>${x}</li>`;
+  }
+
+  html += `</ul>`;
+  document.getElementById("demo").innerHTML = html;
+  </script>
+
+  <h1>JavaScript Arrays</h1>
+  <h2>The sort() Method</h2>
+
+  <p>Click the buttons to sort the array alphabetically or numerically.</p>
+
+  <button onclick="myFunction1()">Sort Alphabetically</button>
+  <button onclick="myFunction2()">Sort Numerically</button>
+
+  <p id="demo11"></p>
+
+  <script>
+  const points = [40, 100, 1, 5, 25, 10];
+  document.getElementById("demo11").innerHTML = points;  
+
+  function myFunction1() {
+    points.sort();
+    document.getElementById("demo11").innerHTML = points;
+  }
+  function myFunction2() {
+    points.sort(function(a, b){return a - b});
+    document.getElementById("demo11").innerHTML = points;
+  }
+  </script>
+  <h2>The sort() Method</h2>
+
+  <p>Click the button (again and again) to sort the array in random order.</p>
+
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo12"></p>
+
+  <script>
+  const points1 = [40, 100, 1, 5, 25, 10];
+  document.getElementById("demo12").innerHTML = points1;  
+
+  function myFunction() {
+    points1.sort(function(){return 0.5 - Math.random()});
+    document.getElementById("demo12").innerHTML = points1;
+  }
+  </script>
+
+  <h2>The Fisher Yates Method</h2>
+
+  <p>Click the button (again and again) to sort the array in random order.</p>
+
+  <button onclick="myFunction1()">Try it again</button>
+  <p id="demo13"></p>
+
+  <script>
+  const points2 = [40, 100, 1, 5, 25, 10];
+  document.getElementById("demo13").innerHTML = points2;  
+
+  function myFunction1() {
+    for (let i = points2.length -1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i+1));
+      let k = points2[i];
+      points2[i] = points2[j];
+      points2[j] = k;
+    }
+    document.getElementById("demo13").innerHTML = points2;
+  }
+  </script>
+
+  <h2>JavaScript Array Sort</h2>
+  <p>The lowest number is <span id="demo14"></span>. </p>
+  <p>The highest number is <span id="demo15"></span>. </p>
+
+  <script>
+  const points3 = [40, 100, 1, 5, 25, 10];
+  document.getElementById("demo14").innerHTML = myArrayMin(points3);
+  document.getElementById("demo15").innerHTML = myArrayMax(points3);  
+
+  function myArrayMin(arr) {
+    let len = arr.length;
+    let min = Infinity;
+    while (len--) {
+      if (arr[len] < min) {
+        min = arr[len];
+      }
+    } 
+    return min;
+  }
+
+  function myArrayMax(arr) {
+    let len = arr.length;
+    let max = - Infinity;
+    while (len++) {
+      if (arr[len] > max) {
+        max = arr[len];
+      }
+    } 
+    return max;
+  }
+  </script>
 </body>
+
 <body>
   <h5>Table inclusion</h5>
   <table>
