@@ -322,8 +322,7 @@
 
   <script>
   const points3 = [40, 100, 1, 5, 25, 10];
-  document.getElementById("demo14").innerHTML = myArrayMin(points3);
-  document.getElementById("demo15").innerHTML = myArrayMax(points3);  
+  document.getElementById("demo14").innerHTML = myArrayMin(points3); 
 
   function myArrayMin(arr) {
     let len = arr.length;
@@ -336,10 +335,12 @@
     return min;
   }
 
+  document.getElementById("demo15").innerHTML = myArrayMax(points3); 
+
   function myArrayMax(arr) {
     let len = arr.length;
     let max = - Infinity;
-    while (len++) {
+    while (len--) {
       if (arr[len] > max) {
         max = arr[len];
       }
@@ -347,6 +348,54 @@
     return max;
   }
   </script>
+  <h1>JavaScript Stable Sort</h1>
+
+  <p>From ES2019, browsers must use a stable sorting algorithm.</p>
+  <p>When sorting elements on a key, the elements must keep their relative position to other objects with the same key.</p>
+
+  <p id="demo16"></p>
+
+  <script>
+
+  const myArr = [
+    {name:"X00",price:100 },
+    {name:"X01",price:100 },
+    {name:"X02",price:100 },
+    {name:"X03",price:100 },
+    {name:"X04",price:110 },
+    {name:"X05",price:110 },
+    {name:"X06",price:110 },
+    {name:"X07",price:110 },
+    {name:"X08",price:120 },
+    {name:"X09",price:120 },
+    {name:"X10",price:120 },
+    {name:"X11",price:120 },
+    {name:"X12",price:130 },
+    {name:"X13",price:130 },
+    {name:"X14",price:130 },
+    {name:"X15",price:130 },
+    {name:"X16",price:140 },
+    {name:"X17",price:140 },
+    {name:"X18",price:140 },
+    {name:"X19",price:140 }
+  ];
+
+  myArr.sort( (p1, p2) => {
+    if (p1.price < p2.price) return 1;
+    if (p1.price > p2.price) return -1;
+    return 0;
+  });
+
+  let txt = "";
+  myArr.forEach(myFunction);
+
+  function myFunction(value) {
+    txt += value.name + " " + value.price + "<br>"; 
+  }
+  document.getElementById("demo16").innerHTML = txt;
+  </script>
+
+
 </body>
 
 <body>
@@ -398,5 +447,39 @@
     <button id="btn">Calculate</button>
   </div>
 
+</body>
+
+
+<body>
+  <h2>Function for firework and rocket</h2>
+  <p>Displaying flower animation on javascript </p>
+
+  <p id="demo17"></p>
+  <script>
+  function firework(t,i,pts) {
+    t -=i*200;
+    let id = i + chars.length * parseInt(t - t%duration);
+    t = t %duration/duration;
+    let dx = (i+1)*w/(1 + chars.length);
+    dx += Math.min(0.33, t)*100*Math.sin(id);
+    let dy = h*0.5;
+    dy += Math.sin(id * 4547.411)*h*0.1;
+    
+    if (t < 0.33) {
+      rocket(dx, dy, id, t*3);
+    }
+    else {
+      explosion(pts, dx, dy, id, Math.min(1, Math.max(0, t - 0.33)*2));
+    }
+  }
+
+  function rocket(x, y, id, t) {
+    ctx.fillStyle = 'white';
+    let r = 2 - 2*t + Math.pow(t, 15*t)*16;
+    y = h - y * t;
+    circle(x, y, r);
+  }
+  document.getElementById("demo17").innerHTML = rocket;
+  </script>
 </body>
 </html>
