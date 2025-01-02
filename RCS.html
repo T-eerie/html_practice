@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Slider in html css and js</title>
+    <!-- linking SwiperJS CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="RCS.css">
+</head>
+<body>
+    <div class="container swiper">
+        <div class="slider-wrapper">
+            <div class="card-list swiper-wrapper">
+                <div class="card-item swiper-slide">
+                 <img src="T1.jpg" alt="Profile Image" class="profile-image">
+                 <h2 class="profile-name">Ben Johnson</h2>
+                 <p class="user-profession">Web Developer</p>
+                 <p id="text"></p>
+                 <button class="message-button" onclick="dosomething()">Message</button>
+                 <script>
+                    function dosomething(){
+                        document.getElementById("text").innerHTML ="I LOVE WHAT I DO";
+                    }
+                 </script>
+                </div>
+
+                <div class="card-item swiper-slide">
+                 <img src="T1.jpg" alt="Profile Image" class="profile-image">
+                 <h2 class="profile-name">Ben Johnson</h2>
+                 <p class="user-profession">Web Developer</p>
+                 <p id="text1"></p>
+                 <button class="message-button" onclick="dosomething1()">Message</button>
+                 <script>
+                    function dosomething1(){
+                        document.getElementById("text1").innerHTML ="BE PROUD OF WHO YOU ARE";
+                    }
+                 </script>
+                </div>
+
+                <div class="card-item swiper-slide">
+                 <img src="T1.jpg" alt="Profile Image" class="profile-image">
+                 <h2 class="profile-name">Ben Johnson</h2>
+                 <p class="user-profession">Web Developer</p>
+                 <p id="text2"></p>
+                 <button class="message-button" onclick="dosomething2()">Message</button>
+                 <script>
+                    function dosomething2(){
+                        document.getElementById("text2").innerHTML ="BE STRONG AND FOCUS, GOD IS IN CONTROL";
+                    }
+                 </script>
+                </div>
+                
+                <div class="card-item swiper-slide">
+                 <img src="T1.jpg" alt="Profile Image" class="profile-image">
+                 <h2 class="profile-name">Ben Johnson</h2>
+                 <p class="user-profession">Web Developer</p>
+                 <button class="message-button">Message</button>
+                </div>
+                
+                <div class="card-item swiper-slide">
+                 <img src="T2.jpg" alt="Profile Image" class="profile-image">
+                 <h2 class="profile-name">Don  Bruce</h2>
+                 <p class="user-profession">Web Developer</p>
+                 <button class="message-button">Message</button>
+                </div>
+                
+                <div class="card-item swiper-slide">
+                 <img src="b1.jpg" alt="Profile Image" class="profile-image">
+                 <h2 class="profile-name">Mary Burn</h2>
+                 <p class="user-profession">Web Developer</p>
+                 <button class="message-button">Message</button>
+                </div>
+                
+                <div class="card-item swiper-slide">
+                 <img src="family1.jpg" alt="Profile Image" class="profile-image">
+                 <h2 class="profile-name">Well Planned</h2>
+                 <p class="user-profession">Web Developer</p>
+                 <button class="message-button">Message</button>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+    </div>
+
+  <!-- linking SwiperJS CSS-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- linking custom script-->
+  <script src="RCS.js"></script>
+</body>
+</html>
